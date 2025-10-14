@@ -130,4 +130,45 @@ details pre {
   padding: 10px;
   margin-top: 8px;
 }
+/* GALERÍA DE CONCIERTOS */
+.galeria {
+  text-align: center;
+  margin-top: 20px;
+}
+.galeria figure {
+  display: inline-block;
+  width: 260px;
+  margin: 15px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid #3a3a3a;
+  border-radius: 8px;
+  padding: 8px;
+  vertical-align: top;
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s;
+}
+.galeria figure:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(211,84,0,0.4);
+  border-color: #d35400;
+}
+.galeria figcaption {
+  margin-top: 6px;
+  font-weight: bold;
+  color: #f5b041;
+  text-transform: uppercase;
+}
+.galeria a {
+  color: #f2f2f2;
+  text-decoration: none;
+}
+.galeria a:hover {
+  color: #d35400;
+}
+
+/* MAPAS */
+iframe {
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+  margin-top: 10px;
+}
 

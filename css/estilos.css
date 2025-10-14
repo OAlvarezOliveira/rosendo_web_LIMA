@@ -32,7 +32,7 @@ a:active {
 
 /* CABECERA Y PIE */
 header, footer {
-  background: linear-gradient(180deg, #141414 0%, #1c1c1c 100%);
+  background: linear-gradient(180deg, #141414 0%, #1c1c1c 100%);blockquote
   border-top: 2px solid #3a3a3a;
   border-bottom: 2px solid #3a3a3a;
   text-align: center;

@@ -1,3 +1,12 @@
+/* =========================================================
+   ESTILOS PRINCIPALES DEL PROYECTO: rosendo_web_LIMA
+   Autor: Óscar Álvarez Oliveira
+   Descripción:
+   Hoja de estilos global utilizada por todas las páginas
+   del sitio web dedicado al músico Rosendo Mercado.
+   ========================================================= */
+
+/* ===== 1. CONFIGURACIÓN GLOBAL ===== */
 body {
   margin: 0;
   font-family: 'RosendoSans', Arial, sans-serif;
@@ -7,7 +16,7 @@ body {
   line-height: 1.6;
 }
 
-/* TITULARES */
+/* ===== 2. TITULARES ===== */
 h1, h2, h3 {
   color: #d35400;
   text-transform: uppercase;
@@ -15,7 +24,7 @@ h1, h2, h3 {
   text-shadow: 0 0 6px rgba(211, 84, 0, 0.5), 0 0 12px rgba(211, 84, 0, 0.3);
 }
 
-/* ENLACES */
+/* ===== 3. ENLACES ===== */
 a:link {
   color: #f39c12;
   text-decoration: none;
@@ -30,28 +39,69 @@ a:active {
   color: #a04000;
 }
 
-/* CABECERA Y PIE */
-header, footer {
-  background: linear-gradient(180deg, #141414 0%, #1c1c1c 100%);blockquote
-  border-top: 2px solid #3a3a3a;
-  border-bottom: 2px solid #3a3a3a;
-  text-align: center;
-  padding: 10px 0;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+/* ===== 4. CABECERA PRINCIPAL ===== */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #0b0c10 0%, #11151b 100%);
+  padding: 2.5rem 1rem 2rem 1rem;
+  border-bottom: 2px solid rgba(255, 49, 49, 0.4);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  gap: 1rem;
 }
 
-/* BLOQUE PRINCIPAL */
+/* ===== 5. LOGOTIPO ===== */
+.brand {
+  margin: 0;
+}
+.brand .logo {
+  height: 110px;
+  width: auto;
+  opacity: 0.95;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.brand .logo:hover {
+  transform: scale(1.08);
+  opacity: 1;
+}
+
+/* ===== 6. MENÚ DE NAVEGACIÓN ===== */
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+  padding: 0;
+  margin: 0;
+}
+header nav a {
+  color: #ffb703;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+header nav a:hover {
+  color: #ffd166;
+  text-shadow: 0 0 10px #ffb703;
+}
+
+/* ===== 7. CONTENEDOR PRINCIPAL ===== */
 main {
-  max-width: 1000px;
-  margin: 40px auto;
+  max-width: 1100px;
+  margin: 3rem auto 40px auto;
   background: rgba(20, 20, 20, 0.8);
   border: 1px solid #3a3a3a;
   border-radius: 12px;
-  padding: 25px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6), inset 0 0 10px rgba(255, 255, 255, 0.03);
+  padding: 32px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6),
+              inset 0 0 10px rgba(255, 255, 255, 0.03);
 }
 
-/* IMÁGENES */
+/* ===== 8. IMÁGENES ===== */
 img {
   max-width: 100%;
   border: 2px solid #3a3a3a;
@@ -59,14 +109,14 @@ img {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
 }
 
-/* SECCIONES */
+/* ===== 9. SECCIONES INTERNAS ===== */
 section {
   margin: 25px 0;
   border-left: 4px solid #d35400;
   padding-left: 14px;
 }
 
-/* BLOCKQUOTE */
+/* ===== 10. CITAS ===== */
 blockquote {
   color: #f5b041;
   font-style: italic;
@@ -79,37 +129,22 @@ blockquote {
   text-shadow: 0 0 3px #000;
 }
 
-/* PIE DE PÁGINA */
+/* ===== 11. PIE DE PÁGINA ===== */
+footer {
+  background: linear-gradient(180deg, #141414 0%, #1c1c1c 100%);
+  border-top: 2px solid #3a3a3a;
+  border-bottom: 2px solid #3a3a3a;
+  text-align: center;
+  padding: 10px 0;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
 footer p {
   color: #b0b0b0;
   font-size: 0.9rem;
   margin: 4px;
 }
 
-/* NAV */
-nav ul.menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
-nav ul.menu li {
-  display: inline-block;
-  margin: 0 15px;
-  padding: 6px 0;
-}
-nav ul.menu li a {
-  color: #f2f2f2;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 600;
-}
-nav ul.menu li a:hover {
-  color: #d35400;
-  text-shadow: 0 0 6px rgba(211, 84, 0, 0.7);
-}
-
-/* DETAILS */
+/* ===== 12. DETALLES (DETAILS) ===== */
 details {
   background: rgba(255,255,255,0.05);
   border: 1px solid #3a3a3a;
@@ -122,7 +157,9 @@ summary {
   font-weight: bold;
   color: #d35400;
 }
-summary:hover { color: #f5b041; }
+summary:hover {
+  color: #f5b041;
+}
 details pre {
   background: rgba(255,255,255,0.05);
   border: 1px solid #3a3a3a;
@@ -130,7 +167,8 @@ details pre {
   padding: 10px;
   margin-top: 8px;
 }
-/* GALERÍA DE CONCIERTOS */
+
+/* ===== 13. GALERÍA DE CONCIERTOS ===== */
 .galeria {
   text-align: center;
   margin-top: 20px;
@@ -165,10 +203,83 @@ details pre {
   color: #d35400;
 }
 
-/* MAPAS */
+/* ===== 14. MAPAS ===== */
 iframe {
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.6);
   margin-top: 10px;
 }
 
+/* ===== 15. GALERÍA DE ÁLBUMES ===== */
+.albumes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  margin-top: 2rem;
+}
+.albumes figure {
+  text-align: center;
+  background: rgba(255,255,255,0.03);
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #3a3a3a;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.albumes figure:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 18px rgba(211,84,0,0.4);
+  border-color: #d35400;
+}
+.albumes img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+.albumes figcaption {
+  margin-top: 8px;
+  font-weight: bold;
+  color: #f5b041;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.albumes figcaption small {
+  display: block;
+  color: #b0b0b0;
+  font-weight: normal;
+  font-size: 0.9rem;
+}
+
+
+/* ===== AJUSTES DE MATRÍCULA ===== */
+
+/* Estilo para fechas con datetime */
+time {
+  color: #f5b041;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: background 0.3s, color 0.3s;
+}
+time:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffd166;
+}
+
+/* Favicon y detalles visuales */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
+}
+
+/* Comentario de autoría */
+ /*
+   Proyecto: rosendo_web_LIMA
+   Autor: Oscar Alvarez Oliveira
+   Curso: Práctica Final UD1
+   Validado HTML5 + CSS3 W3C
+ */

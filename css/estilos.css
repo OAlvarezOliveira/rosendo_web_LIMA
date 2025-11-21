@@ -1,20 +1,21 @@
-/* =========================================================
-   PROYECTO: rosendo_web_LIMA
-   AUTOR: Óscar Álvarez Oliveira
-   DESCRIPCIÓN:
-   Hoja de estilos global utilizada en el sitio web dedicado
-   al músico Rosendo Mercado. Incluye cabecera, navegación,
-   galerías de álbumes y conciertos, detalles y pie de página.
-   ACTUALIZADO UD2: Diseños en columnas, tablas y layouts
-   ========================================================= */
+/*
+================================================================================
+PROYECTO: rosendo_web_LIMA
+AUTOR: Óscar Álvarez Oliveira
+DESCRIPCIÓN: Hoja de estilos principal para el sitio web de Rosendo Mercado
+VERSIÓN: UD2 - Actualizada con diseños responsivos y layouts específicos
+================================================================================
+*/
 
 
-/* =========================================================
-   1️⃣ CONFIGURACIÓN GLOBAL
-   ---------------------------------------------------------
-   - Define tipografía, colores y fondo general.
-   - Aplica a todo el documento HTML.
-   ========================================================= */
+/*
+--------------------------------------------------------------------------------
+CONFIGURACIÓN GLOBAL
+--------------------------------------------------------------------------------
+Define tipografía base, colores corporativos y fondo general del sitio.
+Aplicable a todo el documento HTML.
+--------------------------------------------------------------------------------
+*/
 body {
   margin: 0;
   font-family: 'RosendoSans', Arial, sans-serif;
@@ -25,12 +26,14 @@ body {
 }
 
 
-/* =========================================================
-   2️⃣ TITULARES (h1, h2, h3)
-   ---------------------------------------------------------
-   - Estilo uniforme para títulos.
-   - Usa texto en mayúsculas y efecto de brillo anaranjado.
-   ========================================================= */
+/*
+--------------------------------------------------------------------------------
+ENCABEZADOS
+--------------------------------------------------------------------------------
+Estilos unificados para h1, h2 y h3 con efectos de sombra luminosa.
+Uso de mayúsculas para consistencia visual en toda la web.
+--------------------------------------------------------------------------------
+*/
 h1, h2, h3 {
   color: #d35400;
   text-transform: uppercase;
@@ -40,33 +43,44 @@ h1, h2, h3 {
 }
 
 
-/* =========================================================
-   3️⃣ ENLACES (a)
-   ---------------------------------------------------------
-   - Color naranja con subrayado punteado.
-   - Efectos visuales al pasar el ratón (hover).
-   ========================================================= */
+/*
+--------------------------------------------------------------------------------
+ENLACES
+--------------------------------------------------------------------------------
+Definición de todos los estados de enlace según especificaciones del proyecto.
+Incluye efectos de transición suaves para mejorar la experiencia de usuario.
+--------------------------------------------------------------------------------
+*/
 a:link {
   color: #f39c12;
   text-decoration: none;
   border-bottom: 1px dashed #f39c12;
 }
+
+a:visited {
+  color: #f39c12;
+  border-bottom: 1px dashed #f39c12;
+}
+
 a:hover {
   color: #f8c471;
   text-shadow: 0 0 6px #f5b041;
   border-bottom-color: #f8c471;
 }
+
 a:active {
   color: #a04000;
 }
 
 
-/* =========================================================
-   4️⃣ CABECERA PRINCIPAL (header)
-   ---------------------------------------------------------
-   - Contiene logotipo y menú principal.
-   - Usa flexbox para centrar vertical y horizontalmente.
-   ========================================================= */
+/*
+--------------------------------------------------------------------------------
+CABECERA PRINCIPAL
+--------------------------------------------------------------------------------
+Estructura de header con logo y menú de navegación principal.
+Utiliza flexbox para alineación vertical y horizontal centrada.
+--------------------------------------------------------------------------------
+*/
 header {
   display: flex;
   flex-direction: column;
@@ -80,45 +94,54 @@ header {
 }
 
 
-/* =========================================================
-   5️⃣ LOGOTIPO (.brand)
-   ---------------------------------------------------------
-   - Controla el tamaño y animación de la firma de Rosendo.
-   ========================================================= */
+/*
+--------------------------------------------------------------------------------
+LOGOTIPO
+--------------------------------------------------------------------------------
+Controla dimensiones y efectos de transición del logotipo de la marca.
+Incluye efecto de escala al pasar el cursor.
+--------------------------------------------------------------------------------
+*/
 .brand {
   margin: 0;
 }
+
 .brand .logo {
   height: 110px;
   width: auto;
   opacity: 0.95;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
+
 .brand .logo:hover {
   transform: scale(1.08);
   opacity: 1;
 }
 
 
-/* =========================================================
-   6️⃣ MENÚ DE NAVEGACIÓN
-   ---------------------------------------------------------
-   - Usa lista horizontal con separación entre elementos.
-   - Efectos visuales al pasar el ratón.
-   ========================================================= */
+/*
+--------------------------------------------------------------------------------
+MENÚ DE NAVEGACIÓN
+--------------------------------------------------------------------------------
+Sistema de navegación horizontal con enlaces directos.
+Responsive con flex-wrap para adaptarse a diferentes tamaños de pantalla.
+--------------------------------------------------------------------------------
+*/
 header nav {
   display: flex;
   gap: 2.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
+
 header nav a {
   color: #ffb703;
   font-size: 1.25rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  text-decoration: none;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
 }
+
 header nav a:hover {
   color: #ffd166;
   text-shadow: 0 0 10px #ffb703;
@@ -126,12 +149,14 @@ header nav a:hover {
 }
 
 
-/* =========================================================
-   7️⃣ CONTENEDOR PRINCIPAL (main)
-   ---------------------------------------------------------
-   - Área central del contenido.
-   - Fondo semitransparente con borde y sombra interior.
-   ========================================================= */
+/*
+--------------------------------------------------------------------------------
+CONTENEDOR PRINCIPAL
+--------------------------------------------------------------------------------
+Contenedor central del contenido con ancho máximo definido.
+Incluye fondo semitransparente, bordes y efectos de sombra interior/exterior.
+--------------------------------------------------------------------------------
+*/
 main {
   max-width: 1100px;
   margin: 3rem auto 40px auto;
@@ -144,12 +169,14 @@ main {
 }
 
 
-/* =========================================================
-   UD2: DISEÑO EN COLUMNAS - PÁGINA PRINCIPAL
-   ---------------------------------------------------------
-   - Disposición con ancho al 100% de la página
-   - Diseño en columnas (70% contenido, 30% aside)
-   ========================================================= */
+/*
+--------------------------------------------------------------------------------
+DISEÑO EN COLUMNAS - PÁGINA PRINCIPAL
+--------------------------------------------------------------------------------
+Layout específico para index.html con disposición 70%-30%.
+Article ocupa la columna principal, aside la columna lateral con posición sticky.
+--------------------------------------------------------------------------------
+*/
 .main-columnas {
   max-width: 100%;
   width: 100%;
@@ -188,53 +215,81 @@ main {
 }
 
 
-/* =========================================================
-   UD2: DISEÑO ÁLBUMES - ANCHO REDUCIDO Y COLUMNAS
-   ---------------------------------------------------------
-   - Disposición con ancho reducido
-   - Diseño en columnas para las páginas de álbumes
-   ========================================================= */
+/*
+--------------------------------------------------------------------------------
+DISEÑO ÁLBUMES - ANCHO REDUCIDO
+--------------------------------------------------------------------------------
+Layout específico para páginas de álbumes con ancho máximo reducido.
+Mejora la legibilidad en pantallas amplias.
+--------------------------------------------------------------------------------
+*/
 .albumes-page main {
   max-width: 900px;
 }
 
 
-/* =========================================================
-   UD2: DISEÑO CONCIERTOS - CONTENIDO 100% Y FONDO FIJO
-   ---------------------------------------------------------
-   - Disposición con contenido al 100%
-   - Bloques flotantes y fondo fijo
-   ========================================================= */
+/*
+--------------------------------------------------------------------------------
+DISEÑO CONCIERTOS - FONDO FIJO Y BLOQUES FLOTANTES
+--------------------------------------------------------------------------------
+Layout específico para páginas de conciertos con imagen de fondo fija.
+Utiliza background-attachment fixed para efecto parallax.
+El contenido flota sobre el fondo con alta opacidad.
+--------------------------------------------------------------------------------
+*/
 .concierto-page {
   background-image: url('../../imagenes/rosendo_madrid.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .concierto-main {
   max-width: 100%;
   width: 100%;
-  min-height: 100vh;
+  flex: 1;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .concierto-contenido {
-  max-width: 800px;
+  max-width: 1100px;
   margin: 2rem auto;
   background: rgba(20, 20, 20, 0.95);
-  padding: 2rem;
+  padding: 2.5rem;
   border-radius: 12px;
   border: 2px solid #3a3a3a;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
 }
 
+@media (max-width: 1200px) {
+  .concierto-contenido {
+    max-width: 90%;
+    padding: 2rem;
+  }
+}
 
-/* =========================================================
-   UD2: TABLAS DE CONCIERTOS
-   ---------------------------------------------------------
-   - Estilo para las tablas de información de conciertos
-   ========================================================= */
+@media (max-width: 768px) {
+  .concierto-contenido {
+    max-width: 95%;
+    padding: 1.5rem;
+    margin: 1rem auto;
+  }
+}
+
+
+/*
+--------------------------------------------------------------------------------
+TABLAS DE CONCIERTOS
+--------------------------------------------------------------------------------
+Estructura y estilos para tablas de información de conciertos.
+Incluye efectos hover en filas y estilos diferenciados para encabezados.
+--------------------------------------------------------------------------------
+*/
 .tabla-concierto {
   width: 100%;
   border-collapse: collapse;
@@ -270,18 +325,15 @@ main {
   background: rgba(255, 255, 255, 0.08);
 }
 
-.tabla-concierto time {
-  font-weight: bold;
-  color: #f5b041;
-}
 
-
-/* =========================================================
-   8️⃣ IMÁGENES GENERALES
-   ---------------------------------------------------------
-   - Borde, sombra y esquinas redondeadas.
-   - Se adapta al tamaño máximo del contenedor.
-   ========================================================= */
+/*
+--------------------------------------------------------------------------------
+IMÁGENES GENERALES
+--------------------------------------------------------------------------------
+Estilos base para todas las imágenes del sitio.
+Incluye bordes, sombras y esquinas redondeadas según requisitos del proyecto.
+--------------------------------------------------------------------------------
+*/
 img {
   max-width: 100%;
   border: 2px solid #3a3a3a;
@@ -290,11 +342,14 @@ img {
 }
 
 
-/* =========================================================
-   UD2: FIGURE (figuras con imágenes)
-   ---------------------------------------------------------
-   - Estilo para elementos figure con caption
-   ========================================================= */
+/*
+--------------------------------------------------------------------------------
+FIGURE Y FIGCAPTION
+--------------------------------------------------------------------------------
+Contenedor semántico para imágenes con pie de foto.
+Utilizado en secciones de historia, curiosidades y portadas de álbumes.
+--------------------------------------------------------------------------------
+*/
 figure {
   margin: 1.5rem 0;
   background: rgba(255, 255, 255, 0.03);
@@ -312,23 +367,35 @@ figcaption {
 }
 
 
-/* =========================================================
-   9️⃣ SECCIONES INTERNAS
-   ---------------------------------------------------------
-   - Añade margen y línea lateral decorativa.
-   ========================================================= */
+/*
+--------------------------------------------------------------------------------
+SECCIONES INTERNAS
+--------------------------------------------------------------------------------
+Contenedores de contenido temático con línea lateral decorativa.
+Proporciona separación visual entre diferentes bloques de información.
+--------------------------------------------------------------------------------
+*/
 section {
   margin: 25px 0;
   border-left: 4px solid #d35400;
   padding-left: 14px;
 }
 
+article h2 {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid rgba(211, 84, 0, 0.3);
+}
 
-/* =========================================================
-   🔟 CITAS (blockquote)
-   ---------------------------------------------------------
-   - Estilo destacado para frases icónicas.
-   ========================================================= */
+
+/*
+--------------------------------------------------------------------------------
+BLOCKQUOTE
+--------------------------------------------------------------------------------
+Estilo destacado para citas y frases icónicas.
+Incluye bordes punteados superior e inferior para diferenciación visual.
+--------------------------------------------------------------------------------
+*/
 blockquote {
   color: #f5b041;
   font-style: italic;
@@ -342,41 +409,64 @@ blockquote {
 }
 
 
-/* =========================================================
-   11️⃣ PIE DE PÁGINA (footer)
-   ---------------------------------------------------------
-   - Fondo oscuro con texto claro.
-   - Contiene créditos y validadores HTML/CSS.
-   ========================================================= */
+/*
+--------------------------------------------------------------------------------
+PIE DE PÁGINA
+--------------------------------------------------------------------------------
+Footer con información de copyright, créditos y validadores W3C.
+Incluye efectos hover en las imágenes de validación.
+En páginas de conciertos se asegura que sea visible sobre el fondo.
+Mayor separación del contenido para mejor legibilidad.
+--------------------------------------------------------------------------------
+*/
 footer {
   background: linear-gradient(180deg, #141414 0%, #1c1c1c 100%);
   border-top: 2px solid #3a3a3a;
   border-bottom: 2px solid #3a3a3a;
   text-align: center;
-  padding: 10px 0;
+  padding: 25px 0;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 10;
+  margin-top: 3rem;
 }
+
+.concierto-page footer {
+  background: rgba(20, 20, 20, 0.98);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.8);
+}
+
 footer p {
   color: #b0b0b0;
   font-size: 0.9rem;
-  margin: 4px;
+  margin: 8px 0;
 }
+
+footer a {
+  border-bottom: none;
+}
+
 footer img {
   margin: 5px;
   vertical-align: middle;
   filter: brightness(0.9);
   transition: filter 0.3s ease;
 }
+
 footer img:hover {
   filter: brightness(1.2);
 }
 
 
-/* =========================================================
-   12️⃣ DETALLES (details/summary)
-   ---------------------------------------------------------
-   - Estilo para secciones desplegables de canciones.
-   ========================================================= */
+/*
+--------------------------------------------------------------------------------
+DETAILS Y SUMMARY - LETRAS DE CANCIONES
+--------------------------------------------------------------------------------
+Sistema de acordeones para mostrar/ocultar letras de canciones.
+Incluye estilos para elementos pre con letras formateadas.
+--------------------------------------------------------------------------------
+*/
 details {
   background: rgba(255,255,255,0.05);
   border: 1px solid #3a3a3a;
@@ -384,20 +474,24 @@ details {
   margin: 10px 0;
   padding: 8px 12px;
 }
+
 summary {
   cursor: pointer;
   font-weight: bold;
   color: #d35400;
 }
+
 summary:hover {
   color: #f5b041;
 }
+
 details pre {
   background: rgba(255,255,255,0.05);
   border: 1px solid #3a3a3a;
   border-radius: 8px;
   padding: 10px;
   margin-top: 8px;
+  font-family: 'RosendoSans', monospace, Arial, sans-serif;
 }
 
 .duracion {
@@ -406,12 +500,14 @@ details pre {
 }
 
 
-/* =========================================================
-   13️⃣ GALERÍA DE CONCIERTOS (.galeria)
-   ---------------------------------------------------------
-   - Usa grid para organizar fotos de conciertos.
-   - Se adapta automáticamente al tamaño de pantalla.
-   ========================================================= */
+/*
+--------------------------------------------------------------------------------
+GALERÍA DE CONCIERTOS
+--------------------------------------------------------------------------------
+Sistema de cuadrícula adaptable para mostrar imágenes de conciertos.
+Utiliza CSS Grid con auto-fit para responsive automático.
+--------------------------------------------------------------------------------
+*/
 .galeria {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -419,6 +515,7 @@ details pre {
   justify-items: center;
   margin-top: 2rem;
 }
+
 .galeria figure {
   width: 240px;
   background: rgba(255,255,255,0.03);
@@ -428,17 +525,20 @@ details pre {
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
+
 .galeria figure:hover {
   transform: scale(1.05);
   border-color: #d35400;
   box-shadow: 0 0 18px rgba(211,84,0,0.4);
 }
+
 .galeria img {
   width: 100%;
   height: 180px;
   object-fit: cover;
   border-radius: 6px;
 }
+
 .galeria figcaption {
   margin-top: 8px;
   color: #f5b041;
@@ -446,25 +546,37 @@ details pre {
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
+
 @media (max-width: 768px) {
-  .galeria { grid-template-columns: 1fr; }
-  .galeria img { height: auto; }
+  .galeria {
+    grid-template-columns: 1fr;
+  }
+  .galeria img {
+    height: auto;
+  }
 }
 
 
-/* =========================================================
-   14️⃣ GALERÍA DE ÁLBUMES (.albumes)
-   ---------------------------------------------------------
-   - Cuadrícula con portadas de discos.
-   - Imágenes cuadradas, alineadas y con efectos hover.
-   ========================================================= */
+/*
+--------------------------------------------------------------------------------
+GALERÍA DE ÁLBUMES
+--------------------------------------------------------------------------------
+Cuadrícula de portadas de discos con dimensiones uniformes.
+Las imágenes mantienen aspect ratio cuadrado con object-fit cover.
+Layout 2x2 para mejor visualización.
+--------------------------------------------------------------------------------
+*/
 .albumes {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem 2rem;
   justify-items: center;
   margin-top: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 .albumes h2 {
   grid-column: 1 / -1;
   text-align: center;
@@ -472,6 +584,12 @@ details pre {
   color: #ffb703;
   text-shadow: 0 0 8px rgba(255,183,3,0.4);
 }
+
+.albumes article {
+  width: 100%;
+  max-width: 280px;
+}
+
 .albumes figure {
   display: flex;
   flex-direction: column;
@@ -484,11 +602,13 @@ details pre {
   border: 1px solid #3a3a3a;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
+
 .albumes figure:hover {
   transform: scale(1.05);
   box-shadow: 0 0 18px rgba(211,84,0,0.4);
   border-color: #d35400;
 }
+
 .albumes img {
   width: 220px;
   height: 220px;
@@ -498,6 +618,7 @@ details pre {
   background-color: #000;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .albumes img:hover {
   transform: scale(1.05);
   box-shadow: 0 0 18px rgba(211,84,0,0.5);
@@ -514,6 +635,7 @@ details pre {
   align-items: flex-end;
   justify-content: center;
 }
+
 .albumes figcaption {
   text-align: center;
   font-weight: bold;
@@ -524,6 +646,7 @@ details pre {
   line-height: 1.2;
   min-height: 40px;
 }
+
 .albumes figcaption small {
   display: block;
   color: #b0b0b0;
@@ -531,17 +654,58 @@ details pre {
 }
 
 @media (max-width: 768px) {
-  .albumes { grid-template-columns: 1fr; gap: 1.5rem; }
-  .albumes img { width: 260px; height: auto; }
-  .albumes figcaption { font-size: 1.1rem; }
+  .albumes {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 100%;
+  }
+  .albumes article {
+    max-width: 100%;
+  }
+  .albumes img {
+    width: 260px;
+    height: 260px;
+  }
+  .albumes figcaption {
+    font-size: 1.1rem;
+  }
 }
 
 
-/* =========================================================
-   15️⃣ OTROS ELEMENTOS
-   ---------------------------------------------------------
-   - Fechas (<time>) y preferencia de modo oscuro.
-   ========================================================= */
+/*
+--------------------------------------------------------------------------------
+IFRAMES Y MAPAS
+--------------------------------------------------------------------------------
+Estilos para elementos iframe como mapas de Google Maps.
+Se adaptan al ancho del contenedor y mantienen proporción.
+Borde naranja para destacar y sombra para profundidad.
+--------------------------------------------------------------------------------
+*/
+iframe {
+  width: 100%;
+  max-width: 100%;
+  height: 450px;
+  border: 2px solid #d35400;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  box-shadow: 0 0 15px rgba(211, 84, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  iframe {
+    height: 300px;
+  }
+}
+
+
+/*
+--------------------------------------------------------------------------------
+ELEMENTO TIME - FECHAS Y HORAS
+--------------------------------------------------------------------------------
+Estilos específicos para elementos time con atributo datetime.
+Incluye efectos hover según requisitos del proyecto.
+--------------------------------------------------------------------------------
+*/
 time {
   color: #f5b041;
   font-weight: bold;
@@ -550,21 +714,33 @@ time {
   border-radius: 4px;
   transition: background 0.3s, color 0.3s;
 }
+
 time:hover {
   background: rgba(255, 255, 255, 0.15);
   color: #ffd166;
 }
+
+
+/*
+--------------------------------------------------------------------------------
+PREFERENCIA DE MODO OSCURO
+--------------------------------------------------------------------------------
+Soporte para esquema de color oscuro del sistema operativo.
+--------------------------------------------------------------------------------
+*/
 @media (prefers-color-scheme: dark) {
-  :root { color-scheme: dark; }
+  :root {
+    color-scheme: dark;
+  }
 }
 
 
-/* =========================================================
-   🧾 AUTORÍA Y VALIDACIÓN
-   ========================================================= */
 /*
-   Proyecto: rosendo_web_LIMA
-   Autor: Óscar Álvarez Oliveira
-   Curso: Práctica Final UD2
-   Validado HTML5 + CSS3 W3C
+================================================================================
+FIN DEL ARCHIVO
+Proyecto: rosendo_web_LIMA
+Autor: Óscar Álvarez Oliveira
+Validado: HTML5 + CSS3 W3C
+Versión: Práctica Final UD2
+================================================================================
 */

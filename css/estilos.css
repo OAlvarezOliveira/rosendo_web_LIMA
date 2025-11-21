@@ -5,6 +5,7 @@
    Hoja de estilos global utilizada en el sitio web dedicado
    al músico Rosendo Mercado. Incluye cabecera, navegación,
    galerías de álbumes y conciertos, detalles y pie de página.
+   ACTUALIZADO UD2: Diseños en columnas, tablas y layouts
    ========================================================= */
 
 
@@ -105,12 +106,9 @@ header {
    - Usa lista horizontal con separación entre elementos.
    - Efectos visuales al pasar el ratón.
    ========================================================= */
-header nav ul {
-  list-style: none;
+header nav {
   display: flex;
   gap: 2.5rem;
-  padding: 0;
-  margin: 0;
 }
 header nav a {
   color: #ffb703;
@@ -124,6 +122,7 @@ header nav a {
 header nav a:hover {
   color: #ffd166;
   text-shadow: 0 0 10px #ffb703;
+  border-bottom: none;
 }
 
 
@@ -146,6 +145,138 @@ main {
 
 
 /* =========================================================
+   UD2: DISEÑO EN COLUMNAS - PÁGINA PRINCIPAL
+   ---------------------------------------------------------
+   - Disposición con ancho al 100% de la página
+   - Diseño en columnas (70% contenido, 30% aside)
+   ========================================================= */
+.main-columnas {
+  max-width: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.main-columnas article {
+  grid-column: 1;
+}
+
+.main-columnas aside {
+  grid-column: 2;
+  background: rgba(30, 30, 30, 0.6);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 3px solid #d35400;
+  height: fit-content;
+  position: sticky;
+  top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .main-columnas {
+    grid-template-columns: 1fr;
+  }
+  .main-columnas article,
+  .main-columnas aside {
+    grid-column: 1;
+  }
+  .main-columnas aside {
+    position: static;
+  }
+}
+
+
+/* =========================================================
+   UD2: DISEÑO ÁLBUMES - ANCHO REDUCIDO Y COLUMNAS
+   ---------------------------------------------------------
+   - Disposición con ancho reducido
+   - Diseño en columnas para las páginas de álbumes
+   ========================================================= */
+.albumes-page main {
+  max-width: 900px;
+}
+
+
+/* =========================================================
+   UD2: DISEÑO CONCIERTOS - CONTENIDO 100% Y FONDO FIJO
+   ---------------------------------------------------------
+   - Disposición con contenido al 100%
+   - Bloques flotantes y fondo fijo
+   ========================================================= */
+.concierto-page {
+  background-image: url('../../imagenes/rosendo_madrid.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.concierto-main {
+  max-width: 100%;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.concierto-contenido {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: rgba(20, 20, 20, 0.95);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 2px solid #3a3a3a;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+}
+
+
+/* =========================================================
+   UD2: TABLAS DE CONCIERTOS
+   ---------------------------------------------------------
+   - Estilo para las tablas de información de conciertos
+   ========================================================= */
+.tabla-concierto {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tabla-concierto thead {
+  background: linear-gradient(180deg, #d35400 0%, #a04000 100%);
+}
+
+.tabla-concierto th {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 1rem;
+  text-align: left;
+  letter-spacing: 0.5px;
+}
+
+.tabla-concierto td {
+  padding: 1rem;
+  border-bottom: 1px solid #3a3a3a;
+}
+
+.tabla-concierto tr:last-child td {
+  border-bottom: none;
+}
+
+.tabla-concierto tr:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.tabla-concierto time {
+  font-weight: bold;
+  color: #f5b041;
+}
+
+
+/* =========================================================
    8️⃣ IMÁGENES GENERALES
    ---------------------------------------------------------
    - Borde, sombra y esquinas redondeadas.
@@ -156,6 +287,28 @@ img {
   border: 2px solid #3a3a3a;
   border-radius: 6px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+
+/* =========================================================
+   UD2: FIGURE (figuras con imágenes)
+   ---------------------------------------------------------
+   - Estilo para elementos figure con caption
+   ========================================================= */
+figure {
+  margin: 1.5rem 0;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #3a3a3a;
+}
+
+figcaption {
+  margin-top: 0.8rem;
+  color: #b0b0b0;
+  font-size: 0.9rem;
+  font-style: italic;
+  text-align: center;
 }
 
 
@@ -247,6 +400,11 @@ details pre {
   margin-top: 8px;
 }
 
+.duracion {
+  color: #f5b041;
+  font-style: italic;
+}
+
 
 /* =========================================================
    13️⃣ GALERÍA DE CONCIERTOS (.galeria)
@@ -334,7 +492,7 @@ details pre {
 .albumes img {
   width: 220px;
   height: 220px;
-  object-fit: cover; /* cuadrado uniforme sin deformar */
+  object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
   background-color: #000;
@@ -345,7 +503,6 @@ details pre {
   box-shadow: 0 0 18px rgba(211,84,0,0.5);
 }
 
-/* títulos y pies de foto uniformes */
 .albumes h3 {
   font-size: 1rem;
   color: #ffb703;
@@ -373,7 +530,6 @@ details pre {
   font-size: 0.9rem;
 }
 
-/* responsive: una sola columna en móvil */
 @media (max-width: 768px) {
   .albumes { grid-template-columns: 1fr; gap: 1.5rem; }
   .albumes img { width: 260px; height: auto; }
@@ -409,6 +565,6 @@ time:hover {
 /*
    Proyecto: rosendo_web_LIMA
    Autor: Óscar Álvarez Oliveira
-   Curso: Práctica Final UD1
+   Curso: Práctica Final UD2
    Validado HTML5 + CSS3 W3C
 */

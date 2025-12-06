@@ -235,14 +235,23 @@ DISEÑO CONCIERTOS - FONDO FIJO Y BLOQUES FLOTANTES
 Layout específico para páginas de conciertos con imagen de fondo fija.
 Utiliza background-attachment fixed para efecto parallax.
 El contenido flota sobre el fondo con alta opacidad.
+Cada concierto utiliza su propia imagen de fondo específica.
 --------------------------------------------------------------------------------
 */
 .concierto-page {
-  background-image: url('../../imagenes/rosendo_madrid.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+}
+
+/* Fondos específicos por concierto */
+.concierto-madrid {
+  background-image: url('../imagenes/rosendo_madrid.jpg');
+}
+
+.concierto-barcelona {
+  background-image: url('../imagenes/rosendo_barcelona.jpg');
 }
 
 .concierto-main {

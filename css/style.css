@@ -1,0 +1,490 @@
+/* ========== RESET Y BASE ========== */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #1a1a1a;
+    color: #ccc;
+}
+
+/* ========== GRID LAYOUT PRINCIPAL ========== */
+.contenedor {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+    grid-template-columns: 1fr;
+    gap: 0px;
+    min-height: 100vh;
+}
+
+/* ========== HEADER ========== */
+.header {
+    grid-area: header;
+    background: #2c2c2c;
+    border-bottom: 3px solid #e74c3c;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-zona {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 2px solid #e74c3c;
+}
+
+.header h1 {
+    color: #ff6b5a;
+    margin: 0;
+    font-size: 28px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* ========== NAVEGACIÓN (FLEXBOX) ========== */
+.nav {
+    display: flex;
+    gap: 0px;
+    background: #1a1a1a;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #e74c3c;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    display: block;
+    transition: all 0.3s;
+    border-right: 1px solid #333;
+}
+
+.nav a:last-child {
+    border-right: none;
+}
+
+.nav a:hover {
+    background: #e74c3c;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ========== MAIN ========== */
+.main {
+    grid-area: main;
+    padding: 40px;
+    background: #1a1a1a;
+    min-height: 400px;
+}
+
+.main section {
+    margin-bottom: 30px;
+    background: #2a2a2a;
+    padding: 25px;
+    border-radius: 5px;
+    border: 1px solid #333;
+}
+
+.main h2 {
+    color: #ff6b5a;
+    margin-bottom: 15px;
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.main h3 {
+    color: #ff6b5a;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.main p {
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.main a {
+    color: #ff6b5a;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.main a:hover {
+    color: #ff6b5a;
+}
+
+.main ul {
+    margin-left: 20px;
+    color: #ccc;
+    line-height: 1.8;
+}
+
+.main li {
+    margin-bottom: 10px;
+}
+
+/* ========== TABLAS ========== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table thead {
+    background: #1a1a1a;
+}
+
+table th {
+    color: #ff6b5a;
+    padding: 12px;
+    text-align: left;
+    border-bottom: 2px solid #e74c3c;
+}
+
+table td {
+    padding: 12px;
+    border-bottom: 1px solid #333;
+    color: #ccc;
+}
+
+table tbody tr:hover {
+    background: #333;
+}
+
+/* ========== FIGURAS E IMÁGENES ========== */
+figure {
+    margin: 20px 0;
+}
+
+figure img {
+    width: 100%;
+    border-radius: 5px;
+    border: 2px solid #333;
+}
+
+figcaption {
+    margin-top: 10px;
+    color: #b8b8b8;
+    font-style: italic;
+    font-size: 14px;
+}
+
+/* ========== BLOCKQUOTES (CITAS) ========== */
+blockquote {
+    background: #2a2a2a;
+    border-left: 5px solid #e74c3c;
+    padding: 20px 25px;
+    margin: 30px 0;
+    font-style: italic;
+    color: #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+blockquote strong {
+    color: #ff6b5a;
+    font-style: normal;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+    grid-area: footer;
+    background: #1a1a1a;
+    border-top: 3px solid #e74c3c;
+    padding: 20px;
+    text-align: center;
+    color: #b8b8b8;
+}
+
+.footer a {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+/* ========== GALERÍAS (Álbumes, Miembros, Conciertos) ========== */
+.galeria-albumes,
+.galeria-miembros,
+.galeria-conciertos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* 2 columnas */
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* ========== CARDS DE CONCIERTOS ========== */
+.conciertos {
+    background: black;          
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #333;
+}
+
+.conciertos:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.5);
+}
+
+.conciertos a {
+    text-decoration: none;
+    display: block;
+}
+
+.conciertos img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;           
+    display: block;
+    background: black;              
+}
+
+.conciertos h3 {
+    padding: 15px 20px 5px;
+    color: #ff6b5a;
+    font-size: 20px;
+    margin: 0;
+}
+
+.conciertos p {
+    padding: 0 20px 20px;
+    line-height: 1.5;
+    color: #ccc; 
+    margin: 0;
+}
+
+/* ========== CARDS DE ÁLBUMES ========== */
+.album {
+    background: black;          
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #333;
+}
+
+.album:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.5);
+}
+
+.album a {
+    text-decoration: none;
+    display: block;
+}
+
+.album img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;           
+    display: block;
+    background: black;              
+}
+
+.album h3 {
+    padding: 15px 20px 5px;
+    color: #ff6b5a;
+    font-size: 20px;
+    margin: 0;
+}
+
+.album p {
+    padding: 0 20px 20px;
+    color: #ccc; 
+    margin: 0;
+}
+
+/* ========== CARDS DE MIEMBROS ========== */
+.miembro {
+    background: black;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #333;
+}
+
+.miembro:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.5);
+}
+
+.miembro a {
+    text-decoration: none;
+    display: block;
+}
+
+.miembro img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    display: block;
+    background: black;
+}
+
+.miembro h3 {
+    padding: 15px 20px 5px;
+    color: #ff6b5a;
+    font-size: 20px;
+    margin: 0;
+}
+
+.miembro p {
+    padding: 0 20px 5px;
+    color: #ccc;
+    margin: 0;
+}
+
+.miembro .bio {
+    padding: 10px 20px 20px;
+    color: #b8b8b8;
+    font-size: 14px;
+}
+
+/* ========== GALERÍA DE CONCIERTOS INDIVIDUALES ========== */
+.galeria-concierto {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.galeria-concierto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 2px solid #333;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.galeria-concierto img:hover {
+    transform: scale(1.05);
+    border-color: #ff6b5a;
+}
+
+/* ========== IFRAMES (MAPAS) ========== */
+iframe {
+    border-radius: 5px;
+    border: 2px solid #333;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    /* Grid de galerías a 1 columna */
+    .galeria-albumes,
+    .galeria-miembros,
+    .galeria-conciertos {
+        grid-template-columns: 1fr;
+    }
+
+    /* Galería de conciertos a 2 columnas en móvil */
+    .galeria-concierto {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Reducir altura de imágenes en móvil */
+    .album img,
+    .miembro img,
+    .conciertos img {
+        height: 250px;
+    }
+    
+    /* Header responsive */
+    .header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    /* Menú vertical en móvil */
+    .nav {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .nav a {
+        text-align: center;
+        border-right: none;
+        border-bottom: 1px solid #333;
+    }
+    
+    .nav a:last-child {
+        border-bottom: none;
+    }
+    
+    /* Reducir padding en móvil */
+    .main {
+        padding: 20px;
+    }
+
+    /* Títulos más pequeños en móvil */
+    .main h2 {
+        font-size: 24px;
+    }
+
+    .header h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+}
+
+/* ========== RESPONSIVE EXTRA SMALL ========== */
+@media (max-width: 480px) {
+    .galeria-concierto {
+        grid-template-columns: 1fr;
+    }
+
+    .galeria-concierto img {
+        height: 150px;
+    }
+}
+/* Logo clicable */
+.logo-zona a {
+    display: block;
+    transition: transform 0.3s;
+}
+
+.logo-zona a:hover {
+    transform: scale(1.05);
+}
+
+/* ========== ESTILOS PARA LISTAS EN GALERÍAS ========== */
+.galeria-concierto {
+    list-style: none;
+    padding: 0;
+}
+
+.galeria-concierto li {
+    list-style: none;
+}
+
+/* ========== CAPTION PARA TABLAS ========== */
+caption {
+    caption-side: top;
+    padding: 12px;
+    color: #ff6b5a;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: left;
+}
